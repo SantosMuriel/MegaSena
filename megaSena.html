@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+// Criação de uma Array contendo os números de 1 a 60.
+var maximo = 60;
+var i, array1 = [];
+for (i = 0; i < maximo; i++) {
+   array1[i] = i + 1;
+}
+// Embaralhamento dos 60 numeros contidos na Array.
+var p, n, tmp;
+for (p = array1.length; p;) {
+    n = Math.random() * p-- | 0;
+    tmp = array1[n];
+    array1[n] = array1[p];
+    array1[p] = tmp;
+}
+/* Seleção dos 6 primeiros números da array1
+ter embaralhadado os 60 números, evita que eles se repitam na seleção.*/
+var x, array2 = []; 
+for(var x=0; x < 6; x++){
+array2[x] = array1[x];
+}
+document.write("Números sorteados: " + array2 + "<br>");
+</script>
